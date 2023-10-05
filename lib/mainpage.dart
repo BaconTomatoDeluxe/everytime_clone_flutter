@@ -1,3 +1,8 @@
+import 'package:everytime_clone/campicpage.dart';
+import 'package:everytime_clone/homepage.dart';
+import 'package:everytime_clone/listpage.dart';
+import 'package:everytime_clone/notificationpage.dart';
+import 'package:everytime_clone/timepage.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
@@ -8,94 +13,69 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+  int _selectedIndex = 0;
+
+  static List<Widget> pages = <Widget>[
+    HomePage(),
+    TimePage(),
+    ListPage(),
+    NotificationPage(),
+    CampicPage()
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black26,
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        flexibleSpace: Container(),
-        backgroundColor: Colors.black26,
-        title: Padding(
-          padding: const EdgeInsets.only(left: 10),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(),
-              Text(
-                '에브리타임',
-                style: TextStyle(color: Colors.red, fontSize: 13),
-              ),
-              Text(
-                '고려대 서울캠',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 23,
-                ),
-              )
-            ],
-          ),
-        ),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.search,
-              size: 23,
-            ),
-            color: Colors.white,
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.person_outline,
-              size: 23,
-            ),
-            color: Colors.white,
-          )
-        ],
-      ),
+      body: pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.black26,
-          type: BottomNavigationBarType.fixed,
-          selectedItemColor: Colors.white,
-          unselectedItemColor: Colors.white.withOpacity(0.3),
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.home_outlined,
-                  size: 26,
-                ),
-                label: 'Home'),
-            BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.space_dashboard_outlined,
-                  size: 26,
-                ),
-                label: 'Time'),
-            BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.list_alt_outlined,
-                  size: 26,
-                ),
-                label: 'List'),
-            BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.notifications_none_rounded,
-                  size: 26,
-                ),
-                label: 'Notification'),
-            BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.location_on_outlined,
-                  size: 26,
-                ),
-                label: 'Campic')
-          ]),
+        backgroundColor: Colors.black12,
+        type: BottomNavigationBarType.fixed,
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.white.withOpacity(0.3),
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home_outlined,
+                size: 26,
+              ),
+              label: 'Home'),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.space_dashboard_outlined,
+                size: 26,
+              ),
+              label: 'Time'),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.list_alt_outlined,
+                size: 26,
+              ),
+              label: 'List'),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.notifications_none_rounded,
+                size: 26,
+              ),
+              label: 'Notification'),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.location_on_outlined,
+                size: 26,
+              ),
+              label: 'Campic')
+        ],
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+      ),
     );
   }
 }
