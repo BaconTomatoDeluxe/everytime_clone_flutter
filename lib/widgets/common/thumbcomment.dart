@@ -16,6 +16,9 @@ class ThumbComment extends StatelessWidget {
           '38',
           style: TextStyle(color: Colors.red, fontSize: 13),
         ),
+        SizedBox(
+          width: 4,
+        ),
         Icon(
           Icons.chat_bubble_outline,
           color: Colors.blue,
@@ -24,6 +27,9 @@ class ThumbComment extends StatelessWidget {
         Text(
           '11',
           style: TextStyle(color: Colors.blue, fontSize: 13),
+        ),
+        SizedBox(
+          width: 4,
         )
       ],
     );

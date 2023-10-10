@@ -1,3 +1,4 @@
+import 'package:everytime_clone/widgets/listpage/listbox.dart';
 import 'package:flutter/material.dart';
 
 class ListPage extends StatefulWidget {
@@ -154,11 +155,11 @@ class _ListPageState extends State<ListPage> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          listBox("내가 쓴 글"),
-                          listBox("댓글 단 글"),
-                          listBox("스크랩"),
-                          listBox("HOT 게시판"),
-                          listBox("BEST 게시판"),
+                          ListBox(title: "내가 쓴 글"),
+                          ListBox(title: "댓글 단 글"),
+                          ListBox(title: "스크랩"),
+                          ListBox(title: "HOT 게시판"),
+                          ListBox(title: "BEST 게시판"),
                         ],
                       ),
                     ),
@@ -180,13 +181,13 @@ class _ListPageState extends State<ListPage> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          listBox("자유게시판"),
-                          listBox("비밀게시판"),
-                          listBox("졸업생게시판"),
-                          listBox("새내기게시판"),
-                          listBox("시사・이슈"),
-                          listBox("장터게시판"),
-                          listBox("정보게시판"),
+                          ListBox(title: "자유게시판"),
+                          ListBox(title: "비밀게시판"),
+                          ListBox(title: "졸업생게시판"),
+                          ListBox(title: "새내기게시판"),
+                          ListBox(title: "시사・이슈"),
+                          ListBox(title: "장터게시판"),
+                          ListBox(title: "정보게시판"),
                         ],
                       ),
                     ),
@@ -208,10 +209,10 @@ class _ListPageState extends State<ListPage> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          listBox("오늘의 학식"),
-                          listBox("강의실"),
-                          listBox("스터디"),
-                          listBox("책방"),
+                          ListBox(title: "오늘의 학식"),
+                          ListBox(title: "강의실"),
+                          ListBox(title: "스터디"),
+                          ListBox(title: "책방"),
                         ],
                       ),
                     ),
@@ -224,28 +225,4 @@ class _ListPageState extends State<ListPage> {
       ),
     );
   }
-}
-
-Widget listBox(String title) {
-  return Expanded(
-      child: GestureDetector(
-    onTap: () {},
-    child: Row(
-      children: [
-        Icon(
-          Icons.push_pin_outlined,
-          size: 20,
-          color: Colors.white,
-        ),
-        SizedBox(
-          width: 20,
-        ),
-        Text(
-          title,
-          textAlign: TextAlign.start,
-          style: TextStyle(color: Colors.white, fontSize: 15),
-        )
-      ],
-    ),
-  ));
 }
