@@ -1,7 +1,7 @@
-import 'package:everytime_clone/campicpage.dart';
+import 'package:everytime_clone/screens/campicpage.dart';
 import 'package:everytime_clone/homepage.dart';
-import 'package:everytime_clone/listpage.dart';
-import 'package:everytime_clone/notificationpage.dart';
+import 'package:everytime_clone/screens/listpage.dart';
+import 'package:everytime_clone/screens/notificationpage.dart';
 import 'package:everytime_clone/timepage.dart';
 import 'package:flutter/material.dart';
 
