@@ -13,18 +13,12 @@ class ListBox extends StatelessWidget {
           onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => HotPost()));},
           child: Row(
             children: [
-              Icon(
-                Icons.push_pin_outlined,
-                size: 20,
-                color: Colors.white,
-              ),
-              SizedBox(
-                width: 20,
-              ),
+              const Icon(Icons.push_pin_outlined, size: 20, color: Colors.white),
+              const SizedBox(width: 20),
               Text(
                 title,
                 textAlign: TextAlign.start,
-                style: TextStyle(color: Colors.white, fontSize: 15),
+                style: const TextStyle(color: Colors.white, fontSize: 15),
               )
             ],
           ),

@@ -30,14 +30,16 @@ class _ListPageState extends State<ListPage> {
                       style: TextStyle(
                           fontSize: 25,
                           fontWeight: FontWeight.bold,
-                          color: _index == 0 ? Colors.white : Colors.grey),
+                          color: _index == 0 ? Colors.white : Colors.grey,
+                      ),
                     ),
                     Container(
                         width: 65,
                         height: 2,
                         color: _index == 0
                             ? Colors.white
-                            : Colors.grey.withOpacity(0)),
+                            : Colors.grey.withOpacity(0),
+                    ),
                   ],
                 ),
                 onTap: () {
@@ -46,9 +48,7 @@ class _ListPageState extends State<ListPage> {
                   });
                 },
               ),
-              const SizedBox(
-                width: 15,
-              ),
+              const SizedBox(width: 15),
               GestureDetector(
                 child: Column(
                   children: [
@@ -57,7 +57,8 @@ class _ListPageState extends State<ListPage> {
                       style: TextStyle(
                           fontSize: 25,
                           fontWeight: FontWeight.bold,
-                          color: _index == 1 ? Colors.white : Colors.grey),
+                          color: _index == 1 ? Colors.white : Colors.grey,
+                      ),
                     ),
                     Container(
                         width: 45,
